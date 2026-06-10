@@ -2,8 +2,6 @@ const daily = document.getElementById("daily");
 const weekly = document.getElementById("weekly");
 const monthly = document.getElementById("monthly");
 
-const cards = document.querySelectorAll(".card");
-
 const hours = document.querySelectorAll(".hour");
 const time_selector = document.querySelectorAll(".time");
 const last_value = document.querySelectorAll(".time-duration");
