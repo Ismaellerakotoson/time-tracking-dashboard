@@ -29,12 +29,12 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot](./screenshot.jpg)
+![](./images/design.png)
 
 ### Links
 
 - Solution URL: [GitHub Repository](https://github.com/Ismaellerakotoson/time-tracking-dashboard)
-- Live Site URL: [Live Demo](https://your-live-site-url.com)
+- Live Site URL: [Live Demo](https://ismaellerakotoson.github.io/time-tracking-dashboard/)
 
 ---
 
@@ -57,10 +57,6 @@ Users should be able to:
 Instead of hardcoding the key, I use bracket notation to pass a variable:
 
 ```js
-// ❌ hardcoded key
-data[i].timeframes.weekly.current
-
-// ✅ dynamic key
 data[i].timeframes[period].current
 ```
 

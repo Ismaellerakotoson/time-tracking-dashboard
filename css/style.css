@@ -99,7 +99,7 @@ button {
 }
 @media (min-width: 56.25rem) {
   .profile__name {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
 }
 .profile__nav {
@@ -194,7 +194,7 @@ button {
 }
 @media (min-width: 56.25rem) {
   .card__hours {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     margin-bottom: 0.75rem;
   }
 }
