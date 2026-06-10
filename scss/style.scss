@@ -1,0 +1,224 @@
+$clr-Navy-950: hsl(226, 43%, 10%);
+$clr-Navy-900: hsl(235, 46%, 20%);
+$clr-Purple-500: hsl(235, 45%, 61%);
+$clr-Navy-200: hsl(236, 100%, 87%);
+$clr-text: hsl(0, 0%, 100%);
+$clr-card-hover : hsl(235, 46%, 30%); 
+
+$clr-work      : hsl(15,  100%, 70%);  
+$clr-play      : hsl(195, 74%,  62%);   
+$clr-study     : hsl(348, 100%, 68%);   
+$clr-exercise  : hsl(145, 58%,  55%);   
+$clr-social    : hsl(264, 64%,  52%);   
+$clr-self-care : hsl(43,  84%,  65%);
+
+$texte-small  : 0.938rem;  // 15px
+$texte-normal : 1rem;      // 16px
+$texte-grand  : 2rem;      // 32px
+$texte-titre  : 3.5rem;    // 56px (hours in desktop)
+
+$gap           : 1.5rem; 
+$border         : 0.938rem;
+$height-profil: 16rem;
+
+// Breakpoints
+$ipad: 40rem;
+$desktop: 56.25rem;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin    : 0;
+  padding   : 0;
+}
+body {
+  font-family     : 'Rubik', sans-serif;
+  font-size       : $texte-small;
+  background-color: $clr-Navy-950;
+  color           : $clr-text;
+  min-height      : 100vh;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  padding         : 5rem 1.5rem;
+}
+img {
+  display  : block;
+  max-width: 100%;
+}
+button {
+  font-family: inherit;
+  background : none;
+  border     : none;
+  padding    : 0;
+  cursor     : pointer;
+}
+
+
+.dashboard{
+    display: grid;
+    grid-template-columns: 1fr; //mobile
+    gap: $gap;
+    width: 100%;
+    max-width: 69rem;
+    
+    @media (min-width: $ipad) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $desktop) {
+        grid-template-columns: $height-profil repeat(3, 1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+}
+
+.profile{
+    background-color: $clr-Navy-900;
+    border-radius: $border;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $desktop) {
+        grid-row: 1 / 3;
+    }
+
+    &__user{
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        background: $clr-Purple-500;
+        border-radius: $border;
+        padding: 2rem;
+        flex: 1;
+
+        @media (min-width: $desktop) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2.5rem 2rem;
+        }
+    }
+    &__avatar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 3px solid $clr-text;
+
+        @media (min-width: $desktop) {
+        width : 5rem;
+        height: 5rem;
+        }
+    }
+    &__label {
+        font-size: $texte-small;
+        color: $clr-Navy-200;
+        margin-bottom: 0.25rem;
+    }
+    &__name {
+        font-size  : $texte-grand;
+        font-weight: 300;
+        line-height: 1.2;
+
+        @media (min-width: $desktop) {
+        font-size: $texte-titre;
+        }
+    }
+    &__nav {
+        display: flex;
+        justify-content: space-around;
+        padding: 1.5rem 2rem;
+
+        @media (min-width: $desktop) {
+        flex-direction: column;
+        gap: 1.25rem;
+        padding: 1.5rem 2rem 2rem;
+        }
+    }
+    &__period {
+        color: $clr-Navy-200;
+        font-size: $texte-normal;
+        transition: color 0.2s;
+
+        &:hover,
+        &--active {
+        color: $clr-text;
+        }
+    }
+}
+.card {
+  background: $clr-Navy-900;
+  border-radius: $border;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.2s;
+  &:hover {
+    background: $clr-card-hover;
+  }
+  &__accent {
+    height: 2.75rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0 1rem;
+    overflow: hidden;
+    padding-right: 1rem;
+    img {
+      width     : 5rem;
+      margin-top: -0.5rem;
+    }
+  }
+  &__body {
+    padding: 1.75rem 1.5rem;
+    transition: background 0.2s;
+    background: $clr-Navy-900;
+    border-radius: $border $border 0 0;
+    margin-top: -0.75rem;
+    position: relative;
+    .card:hover & {
+      background: $clr-card-hover;
+    }
+    @media (min-width: $desktop) {
+      padding: 1.75rem 2rem 2rem;
+    }
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    @media (min-width: $desktop) {
+      margin-bottom: 1.5rem;
+    }
+  }
+  &__title {
+    font-weight: 500;
+    font-size: $texte-normal;
+  }
+  &__options {
+    opacity: 0.75;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &__hours {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    @media (min-width: $desktop) {
+      font-size: $texte-titre;
+      margin-bottom: 0.75rem;
+    }
+  }
+  &__last {
+    color: $clr-Navy-200;
+    font-size: $texte-small;
+  }
+  &--work      .card__accent { background: $clr-work;      }
+  &--play      .card__accent { background: $clr-play;      }
+  &--study     .card__accent { background: $clr-study;     }
+  &--exercise  .card__accent { background: $clr-exercise;  }
+  &--social    .card__accent { background: $clr-social;    }
+  &--self-care .card__accent { background: $clr-self-care; }
+}

@@ -1,0 +1,224 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 0.938rem;
+  background-color: hsl(226, 43%, 10%);
+  color: hsl(0, 0%, 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 69rem;
+}
+@media (min-width: 40rem) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 56.25rem) {
+  .dashboard {
+    grid-template-columns: 16rem repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+.profile {
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 0.938rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 56.25rem) {
+  .profile {
+    grid-row: 1/3;
+  }
+}
+.profile__user {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: hsl(235, 45%, 61%);
+  border-radius: 0.938rem;
+  padding: 2rem;
+  flex: 1;
+}
+@media (min-width: 56.25rem) {
+  .profile__user {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5rem 2rem;
+  }
+}
+.profile__avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 3px solid hsl(0, 0%, 100%);
+}
+@media (min-width: 56.25rem) {
+  .profile__avatar {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+.profile__label {
+  font-size: 0.938rem;
+  color: hsl(236, 100%, 87%);
+  margin-bottom: 0.25rem;
+}
+.profile__name {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+@media (min-width: 56.25rem) {
+  .profile__name {
+    font-size: 3.5rem;
+  }
+}
+.profile__nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem 2rem;
+}
+@media (min-width: 56.25rem) {
+  .profile__nav {
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem 2rem 2rem;
+  }
+}
+.profile__period {
+  color: hsl(236, 100%, 87%);
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.profile__period:hover, .profile__period--active {
+  color: hsl(0, 0%, 100%);
+}
+
+.card {
+  background: hsl(235, 46%, 20%);
+  border-radius: 0.938rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.card:hover {
+  background: hsl(235, 46%, 30%);
+}
+.card__accent {
+  height: 2.75rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0 1rem;
+  overflow: hidden;
+  padding-right: 1rem;
+}
+.card__accent img {
+  width: 5rem;
+  margin-top: -0.5rem;
+}
+.card__body {
+  padding: 1.75rem 1.5rem;
+  transition: background 0.2s;
+  background: hsl(235, 46%, 20%);
+  border-radius: 0.938rem 0.938rem 0 0;
+  margin-top: -0.75rem;
+  position: relative;
+}
+.card:hover .card__body {
+  background: hsl(235, 46%, 30%);
+}
+@media (min-width: 56.25rem) {
+  .card__body {
+    padding: 1.75rem 2rem 2rem;
+  }
+}
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 56.25rem) {
+  .card__header {
+    margin-bottom: 1.5rem;
+  }
+}
+.card__title {
+  font-weight: 500;
+  font-size: 1rem;
+}
+.card__options {
+  opacity: 0.75;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+}
+.card__options:hover {
+  opacity: 1;
+}
+.card__hours {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 56.25rem) {
+  .card__hours {
+    font-size: 3.5rem;
+    margin-bottom: 0.75rem;
+  }
+}
+.card__last {
+  color: hsl(236, 100%, 87%);
+  font-size: 0.938rem;
+}
+.card--work .card__accent {
+  background: hsl(15, 100%, 70%);
+}
+.card--play .card__accent {
+  background: hsl(195, 74%, 62%);
+}
+.card--study .card__accent {
+  background: hsl(348, 100%, 68%);
+}
+.card--exercise .card__accent {
+  background: hsl(145, 58%, 55%);
+}
+.card--social .card__accent {
+  background: hsl(264, 64%, 52%);
+}
+.card--self-care .card__accent {
+  background: hsl(43, 84%, 65%);
+}
+
+/*# sourceMappingURL=style.css.map */
